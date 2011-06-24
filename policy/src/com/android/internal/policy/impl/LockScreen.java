@@ -269,7 +269,10 @@ class LockScreen extends LinearLayout implements KeyguardScreen, KeyguardUpdateM
         Log.v(TAG, "Force landscape orientation = " + Boolean.toString(mLockScreenOrientationLand));
             
         final LayoutInflater inflater = LayoutInflater.from(context);
-        if (DBG) Log.v(TAG, "Creation orientation = " + mCreationOrientation);
+        if (DBG){
+	 	Log.v(TAG, "Creation orientation = " + mCreationOrientation);
+		Log.d(TAG, "Update configuration is: " + configuration.toString());
+	}
         
         if (mCreationOrientation == Configuration.ORIENTATION_PORTRAIT) {
             inflater.inflate(R.layout.keyguard_screen_widgets_unlock, this, true);
@@ -1176,13 +1179,6 @@ class LockScreen extends LinearLayout implements KeyguardScreen, KeyguardUpdateM
         Configuration newConfig = getResources().getConfiguration();
         
         Log.d(TAG, "Update configuration is: " + newConfig.toString());
-        if(mLockScreenOrientationLand){
-        	newConfig.orientation = Configuration.ORIENTATION_LANDSCAPE;
-        	Log.d(TAG, "Update configuration is now: " + newConfig.toString());
-        }
-        
-        
-        
         if (newConfig.orientation != mCreationOrientation ) {
             mCallback.recreateMe(newConfig);
         } else if (newConfig.hardKeyboardHidden != mKeyboardHidden) {
