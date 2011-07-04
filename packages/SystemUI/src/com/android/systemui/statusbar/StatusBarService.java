@@ -99,9 +99,6 @@ public class StatusBarService extends Service implements CommandQueue.Callbacks 
     private static final String DATA_TYPE_TMOBILE_THEME = "vnd.tmobile.cursor.item/theme";
     private static final String ACTION_TMOBILE_THEME_CHANGED = "com.tmobile.intent.action.THEME_CHANGED";
     static final String TAG = "StatusBarService";
-     private static final String DATA_TYPE_TMOBILE_STYLE = "vnd.tmobile.cursor.item/style";
-     private static final String DATA_TYPE_TMOBILE_THEME = "vnd.tmobile.cursor.item/theme";
-     private static final String ACTION_TMOBILE_THEME_CHANGED = "com.tmobile.intent.action.THEME_CHANGED";
     static final boolean SPEW_ICONS = false;
     static final boolean SPEW = false;
 
